@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+      .login-btn{
+        width: 50%; margin-left: 25%;
+      }
+    </style>
+    <title>Inicio de sesión</title>
+  </head>
+  <body>
+
+    <div class="container pb-3" style="max-width: 500px; margin-top: 5%;">
+      <div class="row">
+        <!-- Pills navs -->
+        <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Inicio de sesión</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Registro</button>
+          </li>
+        </ul>
+        <!-- Pills navs -->
+
+        <!-- Pills content -->
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <form action="../src/Controller/AuthController.php/login" method="POST" class="text-center">
+              <p >Iniciar sesión</p>
+              <img src="../public/img/login.png" alt="login" class="img-fluid" style="max-width: 200px;">
+
+              <!-- Email input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="text" name ="loginName" id="loginName" class="form-control" required/>
+                <label class="form-label" for="loginName">Usuario</label>
+              </div>
+
+              <!-- Password input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="password" name ="loginPassword" id="loginPassword" class="form-control" required/>
+                <label class="form-label" for="loginPassword">Contraseña</label>
+              </div>
+
+              <!-- 2 column grid layout -->
+              <div class="row mb-4">
+                <div class="col-md-6 d-flex justify-content-center">
+                  <!-- Checkbox -->
+                  <div class="form-check mb-3 mb-md-0">
+                    <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
+                    <label class="form-check-label" for="loginCheck"> Recordarme </label>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-flex justify-content-center">
+                  <!-- Simple link -->
+                  <a href="#!">Olvidaste tu contraseña?</a>
+                </div>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4 login-btn">Iniciar sesión</button>
+
+              <!-- Register buttons -->
+              <div class="text-center">
+                <p>No estas registrado? <a href="#" onclick="document.getElementById('profile-tab').click();">Registrate</a></p>
+              </div>
+            </form>
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <form action="../src/Controller/AuthController.php/register" method="POST" class="text-center">
+              <p >Registro de usuario</p>
+              <img src="../public/img/login.png" alt="login" class="img-fluid" style="max-width: 200px;">
+
+              <!-- Username input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="text" name="registerUsername" id="registerUsername" class="form-control" required/>
+                <label class="form-label" for="registerUsername">Usuario</label>
+              </div>
+
+              <!-- Password input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="password" name="registerPassword" id="registerPassword" class="form-control" required/>
+                <label class="form-label" for="registerPassword">Contraseña</label>
+              </div>
+
+              <!-- Repeat Password input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="password" name="registerRepeatPassword" id="registerRepeatPassword" class="form-control" required/>
+                <label class="form-label" for="registerRepeatPassword" required>Repite la contraseña</label>
+              </div>
+
+              <!-- Checkbox -->
+              <div class="form-check d-flex justify-content-center mb-4">
+                <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" 
+                  aria-describedby="registerCheckHelpText" required/>
+                <label class="form-check-label" for="registerCheck">
+                  He leído y acepto los terminos y condiciones
+                </label>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4 login-btn">Registrarme</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-2">
+      <p>
+        &copy; Copyright 2024. Todos los derechos reservados. |
+        <a href="https://cuakxd.com/JonathanCordero/" target="_blank" class="text-white">Desarrollado por Jonathan Cordero</a>
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  </body>
+</html>
